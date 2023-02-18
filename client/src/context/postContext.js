@@ -7,7 +7,7 @@ export const usePosts = () => {
   return myContext
 }
 
-function PostContext({ children }) {
+function PostProvider({ children }) {
   const [post, setPost] = useState([]);
 
   return (
@@ -23,4 +23,4 @@ function PostContext({ children }) {
   );
 }
 
-export default PostContext;
+export default PostProvider;
