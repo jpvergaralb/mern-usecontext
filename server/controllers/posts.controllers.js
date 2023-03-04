@@ -76,7 +76,7 @@ export const deletePost = async (req, res) => {
   try {
     const post = await Post.findByIdAndDelete(id, { new: true });
     if (!post) return res.status(404).json(`Post of id ${id} not found`);
-    if (post.image) {
+    if (post.image === "") {
       console.log("entro")
       await deleteImage(post.image.public_id)
     }
